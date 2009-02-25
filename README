@@ -1,0 +1,67 @@
+TinyMcePlus
+===========
+
+This plugin based on community engine and tiny_mce plugin, thanks for their great job, and modify and update this plugin for Gol.com.bo, now modify this plugin for work with jquery and no Prototype.
+
+1, Install tiny_mce_plus
+
+cd vendor/plugins
+git clone git://github.com/devon/tiny_mce_plus.git
+
+script/generate tiny_mce_plus_migration
+rake db:migrate
+
+rake tiny_mce_plus:install
+
+2, Install dependent plugins(if you didn't):
+
+paperclip git://github.com/thoughtbot/paperclip.git
+responds_to_parent http://responds-to-parent.googlecode.com/svn/trunk
+will_paginate git://github.com/mislav/will_paginate.git
+jrails (OPTIONAL)
+
+Also, you need 'login_required' method and 'current_user' object in your application. (I recommend you use restful_authentication).
+
+3, In your layout:
+
+<%= javascript_include_tiny_mce_if_used %> 
+<%= tiny_mce if using_tiny_mce? %>
+<%= javascript_include_tag :defaults %>
+
+4, In your controller:
+
+uses_tiny_mce(:options => AppConfig.default_mce_options, :only => [:new, :edit])
+
+
+Install file lists
+==================
+
+rake tiny_mce_plus:install will Install following files:
+
+app
+  |-- controller
+    |-- tiny_mce_photos_controller.rb
+  |-- helpers
+    |-- remote_link_renderer.rb
+  |-- models
+    |-- tiny_mce_photo.rb
+  |-- views
+    |-- tiny_mce_photos
+       |-- _photo_list.html.erb
+config
+  |-- initializers
+    |-- tiny_mce_plus_config.rb
+
+public
+  |-- images
+    |-- tiny_mce
+  |-- javascripts
+    |-- tiny_mce
+
+You may custom the config in tiny_mce_plus_config.rb.
+
+Attention:
+1, do not put <p> </p> around the textarea.
+2, If you use old will_paginate plugin, maybe change the url_for to url_option in remote_link_renderer.rb
+
+Copyright (c) 2008 devon at kuxuesoft.com, released under the MIT license
