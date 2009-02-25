@@ -18,7 +18,7 @@ rake tiny_mce_plus:install
 paperclip git://github.com/thoughtbot/paperclip.git
 responds_to_parent http://responds-to-parent.googlecode.com/svn/trunk
 will_paginate git://github.com/mislav/will_paginate.git
-jrails (OPTIONAL)
+jrails (OPTIONAL) or single jquery library
 
 Also, you need 'login_required' method and 'current_user' object in your application. (I recommend you use restful_authentication).
 
@@ -64,4 +64,4 @@ Attention:
 1, do not put <p> </p> around the textarea.
 2, If you use old will_paginate plugin, maybe change the url_for to url_option in remote_link_renderer.rb
 
-Copyright (c) 2008 devon at kuxuesoft.com, released under the MIT license
+any sugestions? carakan at gmail.com, released under the MIT license
