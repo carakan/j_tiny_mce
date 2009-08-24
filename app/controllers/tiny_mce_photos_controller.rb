@@ -2,7 +2,7 @@ class TinyMcePhotosController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => :create
 
   def index
-    @photos = Media.paginate :page => params[:page], :order => "created_at DESC", :conditions => ['user_id = ?', current_user.id], :per_page => 10
+    @photos = TinyMcePhoto.paginate :page => params[:page], :order => "created_at DESC", :per_page => 10
     render :update do |page|
       page.replace_html :dynamic_images_list, :partial => 'photo_list', :locals => { :photos => @photos }
     end
