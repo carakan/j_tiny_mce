@@ -6,7 +6,7 @@ This plugin based on community engine and tiny_mce plugin, thanks for their grea
 1, Install tiny_mce_plus
 
 cd vendor/plugins
-git clone git://github.com/devon/tiny_mce_plus.git
+git clone git://github.com/carakan/j_tiny_mce.git
 
 script/generate tiny_mce_plus_migration
 rake db:migrate
@@ -16,7 +16,6 @@ rake tiny_mce_plus:install
 2, Install dependent plugins(if you didn't):
 
 paperclip git://github.com/thoughtbot/paperclip.git
-responds_to_parent http://responds-to-parent.googlecode.com/svn/trunk
 will_paginate git://github.com/mislav/will_paginate.git
 jrails (OPTIONAL) or single jquery.js library
 
@@ -38,25 +37,12 @@ Install file lists
 
 rake tiny_mce_plus:install will Install following files:
 
-app
-  |-- controller
-    |-- tiny_mce_photos_controller.rb
-  |-- helpers
-    |-- remote_link_renderer.rb
-  |-- models
-    |-- tiny_mce_photo.rb
-  |-- views
-    |-- tiny_mce_photos
-       |-- _photo_list.html.erb
-config
-  |-- initializers
-    |-- tiny_mce_plus_config.rb
-
 public
   |-- images
     |-- tiny_mce
   |-- javascripts
     |-- tiny_mce
+    |-- jquery.form.js
 
 You may custom the config in tiny_mce_plus_config.rb.
 

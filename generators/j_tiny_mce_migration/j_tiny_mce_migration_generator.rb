@@ -1,4 +1,4 @@
-class TinyMcePlusMigrationGenerator < Rails::Generator::Base 
+class JTinyMceMigrationGenerator < Rails::Generator::Base 
   def manifest 
     record do |m| 
       m.migration_template 'migration.rb', 'db/migrate' 
